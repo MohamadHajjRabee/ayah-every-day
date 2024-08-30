@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Amiri Quran';
+    src: url("./assets/fonts/Amiri-Quran.ttf");
+  }
+}
+@layer base {
+  @font-face {
+    font-family: 'Aftika Light';
+    src: url("./assets/fonts/Aftika-Light.ttf");
+  }
+}
+body {
+  margin: 0;
+  background: black;
+}
