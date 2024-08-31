@@ -1,7 +1,8 @@
 import React, {lazy, Suspense} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Loading from "./components/Loading";
+import {Provider} from "react-redux";
+import {store} from './state/store'
 
 const LazyApp = lazy(() => import('./App'));
 
@@ -9,8 +10,8 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-    <Suspense fallback={<Loading />}>
+    <Provider store={store}>
         <LazyApp />
-    </Suspense>
+    </Provider>
 
 );

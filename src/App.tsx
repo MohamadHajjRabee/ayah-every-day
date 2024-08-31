@@ -7,6 +7,8 @@ import SkeletonContainer from "./components/SkeletonContainer";
 import BackgroundVideo from "./components/BackgroundVideo";
 import AyahArabic from "./components/AyahArabic";
 import AyahEnglish from "./components/AyahEnglish";
+import {RootState} from "./state/store";
+import {useSelector} from "react-redux";
 interface ayahState {
     id: number,
     surah_no: number,
@@ -32,6 +34,7 @@ function App() {
     const containerLength = useRef<HTMLDivElement>(null)
     const ayahLength : number = ayah.ayah_ar.split(' ').length;
 
+    const videoLoading = useSelector((state: RootState) => state.videoLoading.value)
     useEffect(() => {
         fetch('https://backend-ayah-every-day.vercel.app/ayah')
             .then(res => {
@@ -51,16 +54,20 @@ function App() {
     return (
         <div className="min-h-svh grid place-items-center">
             <BackgroundVideo/>
-            <div className="max-w-screen-lg w-[90%] z-30 rounded-xl px-4 pb-5 font-amiriQuran" style={{boxShadow: 'inset 2000px 0 0 0 rgb(0 0 0 / 50%)'}} ref={containerLength}>
-                {ayah.id === 0 && <SkeletonContainer/>}
-                {ayah.surah_name_ar && <AyahSvg ayah={ayah.surah_name_ar + '    /    ' + ayah.surah_name_roman}/>}
-                <AyahArabic ayah={ayah.ayah_ar}/>
-                <AyahEnglish ayah={ayah.ayah_en} ayahLength={ayahLength}/>
-            </div>
-            <div className='fixed bottom-10 text-white left-10 font-aftikaLight'>
-                <a rel="noreferrer" className='underline hover:text-gray-250' href={`https://quran.com/${ayah.surah_no}/${ayah.ayah_no_surah}` } target='_blank'>quran.com <img className='h-5 w-5 inline' src={externalLinkIcon} alt='Open in external link'/></a>
-                <p>Surah {ayah.surah_no} - Verse {ayah.ayah_no_surah}</p>
-            </div>
+            {!videoLoading &&
+                <>
+                    <div className="max-w-screen-lg w-[90%] z-30 rounded-xl px-4 pb-5 font-amiriQuran" style={{boxShadow: 'inset 2000px 0 0 0 rgb(0 0 0 / 50%)'}} ref={containerLength}>
+                        {ayah.id === 0 && <SkeletonContainer/>}
+                        {ayah.surah_name_ar && <AyahSvg ayah={ayah.surah_name_ar + '    /    ' + ayah.surah_name_roman}/>}
+                        <AyahArabic ayah={ayah.ayah_ar}/>
+                        <AyahEnglish ayah={ayah.ayah_en} ayahLength={ayahLength}/>
+                    </div>
+                    <div className='fixed bottom-10 text-white left-10 font-aftikaLight'>
+                        <a rel="noreferrer" className='underline hover:text-gray-250' href={`https://quran.com/${ayah.surah_no}/${ayah.ayah_no_surah}` } target='_blank'>quran.com <img className='h-5 w-5 inline' src={externalLinkIcon} alt='Open in external link'/></a>
+                        <p>Surah {ayah.surah_no} - Verse {ayah.ayah_no_surah}</p>
+                    </div>
+                </>
+            }
         </div>
     );
 }
