@@ -50,7 +50,7 @@ function App() {
 
     return (
         <div className="min-h-svh grid place-items-center">
-            <BackgroundVideo />
+            <BackgroundVideo/>
             <div className="max-w-screen-lg w-[90%] z-30 rounded-xl px-4 pb-5 font-amiriQuran" style={{boxShadow: 'inset 2000px 0 0 0 rgb(0 0 0 / 50%)'}} ref={containerLength}>
                 {ayah.id === 0 && <SkeletonContainer/>}
                 {ayah.surah_name_ar && <AyahSvg ayah={ayah.surah_name_ar + '    /    ' + ayah.surah_name_roman}/>}
