@@ -2,6 +2,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import './App.css';
 import AyahSvg from "./components/AyahSvg";
 import externalLinkIcon from './assets/icons/external_link_icon.svg'
+import githubMarkWhite from './assets/icons/github-mark-white.svg'
 import 'react-loading-skeleton/dist/skeleton.css'
 import SkeletonContainer from "./components/SkeletonContainer";
 import BackgroundVideo from "./components/BackgroundVideo";
@@ -62,12 +63,15 @@ function App() {
                         <AyahEnglish ayah={ayah.ayah_en} ayahLength={ayahLength}/>
                     </div>
                     <div className='fixed bottom-10 text-white left-10 font-aftikaLight'>
-                        <a rel="noreferrer" className='underline hover:text-gray-250' href={`https://quran.com/${ayah.surah_no}/${ayah.ayah_no_surah}` } target='_blank'>quran.com <img className='h-5 w-5 inline' src={externalLinkIcon} alt='Open in external link'/></a>
+                        <a rel="noreferrer" className='underline hover:text-gray-250 hover:opacity-80' href={`https://quran.com/${ayah.surah_no}/${ayah.ayah_no_surah}` } target='_blank'>quran.com <img className='h-5 w-5 inline' src={externalLinkIcon} alt='Open in external link'/></a>
                         <p>Surah {ayah.surah_no} - Verse {ayah.ayah_no_surah}</p>
                     </div>
                 </>
             }
             <BackgroundVideo/>
+            <div className='fixed bottom-10 right-10'>
+                <a href='https://github.com/MohamadHajjRabee/ayah-every-day'><img src={githubMarkWhite} alt='Project on GitHub' className='w-8 aspect-square hover:opacity-80'/></a>
+            </div>
         </div>
     );
 }
