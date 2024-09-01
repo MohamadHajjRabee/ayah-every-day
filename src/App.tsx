@@ -52,8 +52,7 @@ function App() {
 
 
     return (
-        <div className="min-h-svh grid place-items-center">
-            <BackgroundVideo/>
+        <div className="min-h-svh grid place-items-center font-aftikaLight">
             {!videoLoading &&
                 <>
                     <div className="max-w-screen-lg w-[90%] z-30 rounded-xl px-4 pb-5 font-amiriQuran" style={{boxShadow: 'inset 2000px 0 0 0 rgb(0 0 0 / 50%)'}} ref={containerLength}>
@@ -68,6 +67,7 @@ function App() {
                     </div>
                 </>
             }
+            <BackgroundVideo/>
         </div>
     );
 }
