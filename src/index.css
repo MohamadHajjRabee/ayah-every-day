@@ -5,13 +5,13 @@
 @layer base {
   @font-face {
     font-family: 'Amiri Quran';
-    src: url("./assets/fonts/Amiri-Quran.ttf");
+    src: url("./assets/fonts/Amiri-Quran.woff2");
   }
 }
 @layer base {
   @font-face {
     font-family: 'Aftika Light';
-    src: url("./assets/fonts/Aftika-Light.ttf");
+    src: url("./assets/fonts/Aftika-Light.woff2");
   }
 }
 body {
