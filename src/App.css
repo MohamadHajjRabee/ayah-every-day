@@ -51,3 +51,11 @@ body{
   border-style: solid;
   border-color: rgb(107, 114, 128) transparent transparent transparent;
 }
+.logo-text{
+  animation: drawLogo 2.5s ease-in-out infinite alternate;
+}
+@keyframes drawLogo {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
