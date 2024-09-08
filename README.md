@@ -20,7 +20,7 @@ Ayah Every Day is a web application that displays a random ayah (verse) from the
 
 Ayah Every Day also has a Twitter/X bot that posts the daily ayah on Twitter/X. Follow [@Ayah_Every_Day1](https://x.com/ayah_every_day1) to get a daily ayah in your feed.
 
-### Backend
+## Backend
 
 The backend server is open for public use.
 For details on using the backend server, visit the [Ayah Every Day Backend Repository](https://github.com/MohamadHajjRabee/backend-ayah-every-day).
