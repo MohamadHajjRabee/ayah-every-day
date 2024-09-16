@@ -1,8 +1,10 @@
 import {configureStore} from "@reduxjs/toolkit";
 import VideoLoadingReducer from "./VideoLoadingSlice";
+import LanguageReducer from "./LanguageSlice";
 export const store = configureStore({
     reducer: {
-        videoLoading: VideoLoadingReducer
+        videoLoading: VideoLoadingReducer,
+        Language: LanguageReducer
     }
 })
 

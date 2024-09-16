@@ -1,10 +1,10 @@
 import React, {useEffect, useRef, useState} from "react";
 
-interface Props {
+interface AyahSvgProps {
     ayah: string;
 }
 
-const AyahSvg : React.FC<Props> = ({ayah }) => {
+const AyahSvg : React.FC<AyahSvgProps> = ({ayah }) => {
 
     const ayahTextRef = useRef<SVGTextElement>(null)
     const [sizes, setSizes] = useState<number>(0)
