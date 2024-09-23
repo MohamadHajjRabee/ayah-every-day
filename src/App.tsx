@@ -37,7 +37,7 @@ function App() {
         surah_no: 0
     })
     const containerLength = useRef<HTMLDivElement>(null)
-    const ayahLength : number = ayah.ayah_ar.split(' ').length;
+    const ayahLength : number = ayah.ayah_ar.length;
 
     const videoLoading = useSelector((state: RootState) => state.videoLoading.value)
     useEffect(() => {
