@@ -20,7 +20,9 @@ export interface ayahState {
     surah_name_roman: string,
     ayah_no_surah: number,
     ayah_ar: string,
-    ayah_en: string
+    ayah_en: string,
+    ayah_tr: string,
+    ayah_de: string,
 }
 
 function App() {
@@ -29,6 +31,8 @@ function App() {
     const [ayah, setAyah] = useState<ayahState>({
         ayah_ar: "",
         ayah_en: "",
+        ayah_tr: "",
+        ayah_de: "",
         ayah_no_surah: 0,
         id: 0,
         surah_name_ar: "",

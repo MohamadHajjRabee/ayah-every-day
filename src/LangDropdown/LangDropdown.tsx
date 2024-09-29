@@ -15,6 +15,7 @@ const LangDropdown = () => {
     const languages = [
         { name: 'English', value: 'ayah_en' },
         { name: 'Deutsch', value: 'ayah_de' },
+        { name: 'Türkçe', value: 'ayah_tr'}
     ];
     useEffect(() => {
         function handleClickOutside(event: MouseEvent) {
