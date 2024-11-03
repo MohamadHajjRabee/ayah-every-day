@@ -4,6 +4,7 @@ import AyahSvg from "./components/AyahSvg";
 import externalLinkIcon from './assets/icons/external_link_icon.svg';
 import githubMarkWhite from './assets/icons/github-mark-white.svg';
 import xLogo from './assets/icons/x-logo.svg';
+import instagramLogo from './assets/icons/Instagram_Glyph_White.svg'
 import 'react-loading-skeleton/dist/skeleton.css'
 import SkeletonContainer from "./components/SkeletonContainer";
 import BackgroundVideo from "./components/BackgroundVideo";
@@ -62,9 +63,12 @@ function App() {
 
     return (
         <div className="min-h-svh grid place-items-center font-aftikaLight">
-            <LangDropdown/>
             {!videoLoading &&
                 <>
+                    <LangDropdown/>
+                    <div className='absolute md:top-10 md:left-10 top-5 left-5 md:text-3xl text-xl  text-white'>
+                        Ayah Every Day
+                    </div>
                     <div className="max-w-screen-lg w-[90%] z-30 rounded-xl px-4 pb-5 font-amiriQuran" style={{boxShadow: 'inset 2000px 0 0 0 rgb(0 0 0 / 50%)'}} ref={containerLength}>
                         {ayah.id === 0 && <SkeletonContainer/>}
                         {ayah.surah_name_ar && <AyahSvg ayah={ayah.surah_name_ar + '    /    ' + ayah.surah_name_roman}/>}
@@ -81,6 +85,8 @@ function App() {
             <div className='fixed md:bottom-10 md:right-10 bottom-5 right-5 flex flex-row gap-3'>
                 <a href='https://github.com/MohamadHajjRabee/ayah-every-day' rel="noreferrer" target='_blank'><img src={githubMarkWhite} alt='Project on GitHub' className='w-8 transition-opacity aspect-square hover:opacity-80'/></a>
                 <a href='https://x.com/ayah_every_day1' rel="noreferrer" target='_blank'><img src={xLogo} alt='X/Twitter page' className='w-8 transition-opacity aspect-square hover:opacity-80'/></a>
+                <a href='https://www.instagram.com/ayah_every_day0/' rel="noreferrer" target='_blank'><img src={instagramLogo} alt='instagram' className='w-8 transition-opacity aspect-square hover:opacity-80'/></a>
+
             </div>
         </div>
     );

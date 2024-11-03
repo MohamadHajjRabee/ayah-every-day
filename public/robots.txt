@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /node_modules/
+Allow: /
+Sitemap: https://ayah-every-day.vercel.app/sitemap.xml

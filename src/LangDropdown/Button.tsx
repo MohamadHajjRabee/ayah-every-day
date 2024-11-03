@@ -10,7 +10,7 @@ const Button : React.FC<ButtonProps> = ({value, name, onClick}) => {
 
 
     return (
-        <button className=' my-2 border-b-2 border-b-transparent hover:border-white opacity-85 hover:opacity-100 transition-all' onClick={() => onClick({name, value})}>{name}</button>
+        <button className=' my-1 border-b-2 border-b-transparent hover:border-white opacity-85 hover:opacity-100 transition-all' onClick={() => onClick({name, value})}>{name}</button>
     )
 }
 
